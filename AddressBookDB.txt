@@ -43,3 +43,36 @@ mysql> DESCRIBE addressbookDB;
 | Email     | varchar(200) | YES  |     | NULL    |                |
 +-----------+--------------+------+-----+---------+----------------+
 9 rows in set (0.15 sec)
+
+UC3
+mysql> INSERT INTO addressbookDB( Firstname, Lastname,Address, City, State,Zip, PhoneNo, Email) VALUES
+    -> ( 'Suyash','Gaikwad','NashikRoad','Nashik','Maharashtra',422101,9689887638,'suyashgaikwad31@gmail.com' );
+Query OK, 1 row affected (0.06 sec)
+
+mysql> INSERT INTO addressbookDB( Firstname, Lastname,Address, City, State,Zip, PhoneNo, Email) VALUES
+    -> ( 'Sagar','Jaware','NashikRoad','Nashik','Maharashtra',422101,9689887638,'suyashgaikwad31@gmail.com' );
+Query OK, 1 row affected (0.08 sec)
+
+mysql> INSERT INTO addressbookDB( Firstname, Lastname,Address, City, State,Zip, PhoneNo, Email) VALUES
+    -> ( 'Sumit','Gosavi','NashikRoad','Nashik','Maharashtra',422101,9689887638,'suyashgaikwad31@gmail.com' );
+Query OK, 1 row affected (0.06 sec)
+
+mysql> INSERT INTO addressbookDB( Firstname, Lastname,Address, City, State,Zip, PhoneNo, Email) VALUES
+    -> ( 'Nikita','Gaikwad','NashikRoad','Nashik','Maharashtra',422101,9689887638,'suyashgaikwad31@gmail.com' );
+Query OK, 1 row affected (0.10 sec)
+
+mysql> INSERT INTO addressbookDB( Firstname, Lastname,Address, City, State,Zip, PhoneNo, Email) VALUES
+    -> ( 'Shantanu','Gaikwad','NashikRoad','Nashik','Maharashtra',422101,9689887638,'suyashgaikwad31@gmail.com' );
+Query OK, 1 row affected (0.06 sec)
+
+mysql> SELECT * FROM addressbookDB;
++----+-----------+----------+------------+--------+-------------+--------+------------+---------------------------+
+| id | Firstname | Lastname | Address    | City   | State       | Zip    | PhoneNo    | Email                     |
++----+-----------+----------+------------+--------+-------------+--------+------------+---------------------------+
+|  1 | Suyash    | Gaikwad  | NashikRoad | Nashik | Maharashtra | 422101 | 9689887638 | suyashgaikwad31@gmail.com |
+|  2 | Sagar     | Jaware   | NashikRoad | Nashik | Maharashtra | 422101 | 9689887638 | suyashgaikwad31@gmail.com |
+|  3 | Sumit     | Gosavi   | NashikRoad | Nashik | Maharashtra | 422101 | 9689887638 | suyashgaikwad31@gmail.com |
+|  4 | Nikita    | Gaikwad  | NashikRoad | Nashik | Maharashtra | 422101 | 9689887638 | suyashgaikwad31@gmail.com |
+|  5 | Shantanu  | Gaikwad  | NashikRoad | Nashik | Maharashtra | 422101 | 9689887638 | suyashgaikwad31@gmail.com |
++----+-----------+----------+------------+--------+-------------+--------+------------+---------------------------+
+5 rows in set (0.00 sec)
