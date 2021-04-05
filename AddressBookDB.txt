@@ -283,3 +283,13 @@ mysql> SELECT * FROM addressbookDB;
 +----+-----------+----------+--------+------------+--------+-------------+--------+------------+---------------------------+
 5 rows in set (0.00 sec)
 
+UC10
+mysql>  SELECT Type, COUNT(*) FROM addressbookDB  group by Type;
++--------+----------+
+| Type   | COUNT(*) |
++--------+----------+
+| Friend |        2 |
+| Family |        3 |
++--------+----------+
+2 rows in set (0.00 sec)
+
