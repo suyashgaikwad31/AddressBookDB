@@ -1,0 +1,13 @@
+UC1
+mysql> CREATE DATABASE addressbookDB;
+Query OK, 1 row affected (0.08 sec)
+
+mysql> USE addressbookDB;
+Database changed
+mysql> SELECT DATABASE();
++---------------+
+| DATABASE()    |
++---------------+
+| addressbookdb |
++---------------+
+1 row in set (0.00 sec)
