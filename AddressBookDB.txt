@@ -156,3 +156,36 @@ mysql> SELECT * FROM addressbookDB WHERE city = 'Nashik' OR State = 'Maharashtra
 +----+-----------+----------+------------+--------+-------------+--------+------------+---------------------------+
 5 rows in set (0.00 sec)
 
+UC7
+mysql>  SELECT COUNT(City) FROM addressbookDB WHERE City = 'Pune' GROUP BY City;
++-------------+
+| COUNT(City) |
++-------------+
+|           1 |
++-------------+
+1 row in set (0.01 sec)
+
+mysql>  SELECT COUNT(City) FROM addressbookDB WHERE City = 'Nashik' GROUP BY City;
++-------------+
+| COUNT(City) |
++-------------+
+|           4 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql>  SELECT COUNT(City) FROM addressbookDB;
++-------------+
+| COUNT(City) |
++-------------+
+|           5 |
++-------------+
+1 row in set (0.04 sec)
+
+mysql>  SELECT COUNT(State) FROM addressbookDB WHERE State = 'Maharashtra' GROUP BY State;
++--------------+
+| COUNT(State) |
++--------------+
+|            5 |
++--------------+
+1 row in set (0.00 sec)
+
