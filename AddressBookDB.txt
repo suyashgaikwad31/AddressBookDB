@@ -189,3 +189,28 @@ mysql>  SELECT COUNT(State) FROM addressbookDB WHERE State = 'Maharashtra' GROUP
 +--------------+
 1 row in set (0.00 sec)
 
+UC8
+mysql> SELECT Firstname FROM addressbookDB ORDER by City DESC;
++-----------+
+| Firstname |
++-----------+
+| Suyash    |
+| Sagar     |
+| Sumit     |
+| Nikita    |
+| Shantanu  |
++-----------+
+5 rows in set (0.01 sec)
+
+mysql> SELECT Firstname FROM addressbookDB ORDER by City ASC;
++-----------+
+| Firstname |
++-----------+
+| Sagar     |
+| Sumit     |
+| Nikita    |
+| Shantanu  |
+| Suyash    |
++-----------+
+5 rows in set (0.00 sec)
+
