@@ -214,3 +214,72 @@ mysql> SELECT Firstname FROM addressbookDB ORDER by City ASC;
 +-----------+
 5 rows in set (0.00 sec)
 
+UC9
+
+mysql> ALTER TABLE addressbookDB ADD Type VARCHAR(140) AFTER Lastname;
+Query OK, 0 rows affected (1.62 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM addressbookDB;
++----+-----------+----------+------+------------+--------+-------------+--------+------------+---------------------------+
+| id | Firstname | Lastname | Type | Address    | City   | State       | Zip    | PhoneNo    | Email                     |
++----+-----------+----------+------+------------+--------+-------------+--------+------------+---------------------------+
+|  2 | Sagar     | Jaware   | NULL | NashikRoad | Nashik | Maharashtra | 422101 | 9689887638 | suyashgaikwad31@gmail.com |
+|  3 | Sumit     | Gosavi   | NULL | NashikRoad | Nashik | Maharashtra | 422101 | 9689887638 | suyashgaikwad31@gmail.com |
+|  4 | Nikita    | Gaikwad  | NULL | NashikRoad | Nashik | Maharashtra | 422101 | 9689887638 | suyashgaikwad31@gmail.com |
+|  7 | Shantanu  | Gaikwad  | NULL | NashikRoad | Nashik | Maharashtra | 422101 | 9689887638 | suyashgaikwad31@gmail.com |
+|  8 | Suyash    | Gaikwad  | NULL | NashikRoad | Pune   | Maharashtra | 422101 | 9689887638 | suyashgaikwad31@gmail.com |
++----+-----------+----------+------+------------+--------+-------------+--------+------------+---------------------------+
+5 rows in set (0.00 sec)
+
+mysql> DESCRIBE addressbookDB;
++-----------+--------------+------+-----+---------+----------------+
+| Field     | Type         | Null | Key | Default | Extra          |
++-----------+--------------+------+-----+---------+----------------+
+| id        | int unsigned | NO   | PRI | NULL    | auto_increment |
+| Firstname | varchar(140) | NO   |     | NULL    |                |
+| Lastname  | varchar(140) | NO   |     | NULL    |                |
+| Type      | varchar(140) | YES  |     | NULL    |                |
+| Address   | varchar(140) | YES  |     | NULL    |                |
+| City      | varchar(50)  | NO   |     | NULL    |                |
+| State     | varchar(50)  | NO   |     | NULL    |                |
+| Zip       | double       | NO   |     | NULL    |                |
+| PhoneNo   | double       | NO   |     | NULL    |                |
+| Email     | varchar(200) | YES  |     | NULL    |                |
++-----------+--------------+------+-----+---------+----------------+
+10 rows in set (0.10 sec)
+
+mysql> update addressbookDB set Type = 'Family' where name = 'Suyash';
+ERROR 1054 (42S22): Unknown column 'name' in 'where clause'
+mysql> update addressbookDB set Type = 'Family' where Firstname = 'Suyash';
+Query OK, 1 row affected (0.06 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update addressbookDB set Type = 'Family' where Firstname = 'Nikita';
+Query OK, 1 row affected (0.07 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update addressbookDB set Type = 'Family' where Firstname = 'Shantanu';
+Query OK, 1 row affected (0.10 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update addressbookDB set Type = 'Friend' where Firstname = 'Sagar';
+Query OK, 1 row affected (0.07 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update addressbookDB set Type = 'Friend' where Firstname = 'Sumit';
+Query OK, 1 row affected (0.03 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT * FROM addressbookDB;
++----+-----------+----------+--------+------------+--------+-------------+--------+------------+---------------------------+
+| id | Firstname | Lastname | Type   | Address    | City   | State       | Zip    | PhoneNo    | Email                     |
++----+-----------+----------+--------+------------+--------+-------------+--------+------------+---------------------------+
+|  2 | Sagar     | Jaware   | Friend | NashikRoad | Nashik | Maharashtra | 422101 | 9689887638 | suyashgaikwad31@gmail.com |
+|  3 | Sumit     | Gosavi   | Friend | NashikRoad | Nashik | Maharashtra | 422101 | 9689887638 | suyashgaikwad31@gmail.com |
+|  4 | Nikita    | Gaikwad  | Family | NashikRoad | Nashik | Maharashtra | 422101 | 9689887638 | suyashgaikwad31@gmail.com |
+|  7 | Shantanu  | Gaikwad  | Family | NashikRoad | Nashik | Maharashtra | 422101 | 9689887638 | suyashgaikwad31@gmail.com |
+|  8 | Suyash    | Gaikwad  | Family | NashikRoad | Pune   | Maharashtra | 422101 | 9689887638 | suyashgaikwad31@gmail.com |
++----+-----------+----------+--------+------------+--------+-------------+--------+------------+---------------------------+
+5 rows in set (0.00 sec)
+
