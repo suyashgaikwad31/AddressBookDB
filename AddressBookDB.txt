@@ -76,3 +76,36 @@ mysql> SELECT * FROM addressbookDB;
 |  5 | Shantanu  | Gaikwad  | NashikRoad | Nashik | Maharashtra | 422101 | 9689887638 | suyashgaikwad31@gmail.com |
 +----+-----------+----------+------------+--------+-------------+--------+------------+---------------------------+
 5 rows in set (0.00 sec)
+
+UC4
+mysql> update addressbookDB set Firstname = 'Shantanu' where Firstname = 'Suyash';
+Query OK, 1 row affected (0.06 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT * FROM addressbookDB;
++----+-----------+----------+------------+--------+-------------+--------+------------+---------------------------+
+| id | Firstname | Lastname | Address    | City   | State       | Zip    | PhoneNo    | Email                     |
++----+-----------+----------+------------+--------+-------------+--------+------------+---------------------------+
+|  1 | Shantanu  | Gaikwad  | NashikRoad | Nashik | Maharashtra | 422101 | 9689887638 | suyashgaikwad31@gmail.com |
+|  2 | Sagar     | Jaware   | NashikRoad | Nashik | Maharashtra | 422101 | 9689887638 | suyashgaikwad31@gmail.com |
+|  3 | Sumit     | Gosavi   | NashikRoad | Nashik | Maharashtra | 422101 | 9689887638 | suyashgaikwad31@gmail.com |
+|  4 | Nikita    | Gaikwad  | NashikRoad | Nashik | Maharashtra | 422101 | 9689887638 | suyashgaikwad31@gmail.com |
+|  5 | Shantanu  | Gaikwad  | NashikRoad | Nashik | Maharashtra | 422101 | 9689887638 | suyashgaikwad31@gmail.com |
++----+-----------+----------+------------+--------+-------------+--------+------------+---------------------------+
+5 rows in set (0.04 sec)
+
+mysql> update addressbookDB set Firstname = 'Suyash' where Firstname = 'Shantanu';
+Query OK, 2 rows affected (0.11 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> SELECT * FROM addressbookDB;
++----+-----------+----------+------------+--------+-------------+--------+------------+---------------------------+
+| id | Firstname | Lastname | Address    | City   | State       | Zip    | PhoneNo    | Email                     |
++----+-----------+----------+------------+--------+-------------+--------+------------+---------------------------+
+|  1 | Suyash    | Gaikwad  | NashikRoad | Nashik | Maharashtra | 422101 | 9689887638 | suyashgaikwad31@gmail.com |
+|  2 | Sagar     | Jaware   | NashikRoad | Nashik | Maharashtra | 422101 | 9689887638 | suyashgaikwad31@gmail.com |
+|  3 | Sumit     | Gosavi   | NashikRoad | Nashik | Maharashtra | 422101 | 9689887638 | suyashgaikwad31@gmail.com |
+|  4 | Nikita    | Gaikwad  | NashikRoad | Nashik | Maharashtra | 422101 | 9689887638 | suyashgaikwad31@gmail.com |
+|  5 | Suyash    | Gaikwad  | NashikRoad | Nashik | Maharashtra | 422101 | 9689887638 | suyashgaikwad31@gmail.com |
++----+-----------+----------+------------+--------+-------------+--------+------------+---------------------------+
+5 rows in set (0.00 sec)
