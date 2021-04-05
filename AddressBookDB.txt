@@ -11,3 +11,35 @@ mysql> SELECT DATABASE();
 | addressbookdb |
 +---------------+
 1 row in set (0.00 sec)
+
+UC2
+mysql> CREATE TABLE addressbookDB
+    -> (
+    -> id       INT unsigned NOT NULL AUTO_INCREMENT,
+    -> Firstname        VARCHAR(140) NOT NULL,
+    -> Lastname         VARCHAR(140) NOT NULL,
+    -> Address          VARCHAR(140),
+    -> City             VARCHAR(50) NOT NULL,
+    -> State            VARCHAR(50) NOT NULL,
+    -> Zip              Double NOT NULL,
+    -> PhoneNo          Double NOT NULL,
+    -> Email            VARCHAR(200),
+    -> PRIMARY KEY  (id)
+    -> );
+Query OK, 0 rows affected (0.99 sec)
+
+mysql> DESCRIBE addressbookDB;
++-----------+--------------+------+-----+---------+----------------+
+| Field     | Type         | Null | Key | Default | Extra          |
++-----------+--------------+------+-----+---------+----------------+
+| id        | int unsigned | NO   | PRI | NULL    | auto_increment |
+| Firstname | varchar(140) | NO   |     | NULL    |                |
+| Lastname  | varchar(140) | NO   |     | NULL    |                |
+| Address   | varchar(140) | YES  |     | NULL    |                |
+| City      | varchar(50)  | NO   |     | NULL    |                |
+| State     | varchar(50)  | NO   |     | NULL    |                |
+| Zip       | double       | NO   |     | NULL    |                |
+| PhoneNo   | double       | NO   |     | NULL    |                |
+| Email     | varchar(200) | YES  |     | NULL    |                |
++-----------+--------------+------+-----+---------+----------------+
+9 rows in set (0.15 sec)
